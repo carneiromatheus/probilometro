@@ -13,24 +13,46 @@
   <h1>Calculadora de Probabilidades de Eventos</h1>
   <div class="container">
     <form id="eventoForm">
+
+      <!-- Dropdown para seleção do tipo de cálculo -->
+      <label for="tipoCalculo">Tipo de Cálculo:</label>
+      <select id="tipoCalculo">
+        <option value="probabilidade">Probabilidade</option>
+        <option value="probabilidadeCondicional">Probabilidade Condicional</option>
+      </select>
+
+      <!-- Campo para Espaço Amostral (visível para ambos os cálculos) -->
       <label for="espacoAmostral">Espaço Amostral:</label>
       <input type="number" id="espacoAmostral" placeholder="Digite o espaço amostral" required>
 
-      <div class="eventos" id="eventosContainer">
-        <h3>Eventos:</h3>
-        <div class="evento">
-          <label for="eventoNome">Nome do Evento:</label>
-          <input type="text" class="eventoNome" placeholder="Nome do evento" required>
-          <label for="qntEventos">Quantidade de Eventos Favoráveis:</label>
-          <input type="number" class="qntEventos" placeholder="Quantidade de eventos favoráveis" required>
-          <div>
-            <label for="calcularComplementar">Calcular Complemento?</label>
-            <input type="checkbox" class="calcularComplementar">
+      <!-- Campos para probabilidade normal -->
+      <div id="probabilidadeCampos">
+        <div class="eventos" id="eventosContainer">
+          <h3>Eventos:</h3>
+          <div class="evento">
+            <label for="eventoNome">Nome do Evento:</label>
+            <input type="text" class="eventoNome" placeholder="Nome do evento" required>
+            <label for="qntEventos">Quantidade de Eventos Favoráveis:</label>
+            <input type="number" class="qntEventos" placeholder="Quantidade de eventos favoráveis" required>
+            <div>
+              <label for="calcularComplementar">Calcular Complemento?</label>
+              <input type="checkbox" class="calcularComplementar">
+            </div>
           </div>
         </div>
+
+        <button type="button" class="add-evento" id="addEventoBtn">Adicionar Evento</button>
       </div>
 
-      <button type="button" class="add-evento" id="addEventoBtn">Adicionar Evento</button>
+      <!-- Campos para probabilidade condicional -->
+      <div id="probabilidadeCondicionalCampos" style="display:none;">
+        <h3>Probabilidade Condicional:</h3>
+        <label for="interseccaoAB">Interseção P(A ∩ B):</label>
+        <input type="number" id="interseccaoAB" placeholder="Digite o valor de A ∩ B" required>
+        <label for="eventoB">Evento B:</label>
+        <input type="number" id="eventoB" placeholder="Digite o valor de B" required>
+      </div>
+
       <button type="button" class="calcular" id="calcularBtn">Calcular</button>
 
       <div class="resultado" id="resultadoContainer">

@@ -1,29 +1,20 @@
 // Função para calcular a probabilidade de um evento
 function calcularProbabilidade(nomeEvento, qntEventos, espacoAmostral) {
-  if (espacoAmostral === 0) {
-    throw new Error(
-      `Erro no evento ${nomeEvento}: O espaço amostral não pode ser zero.`
-    );
-  }
-
-  if (qntEventos < 0) {
-    throw new Error(
-      `Erro no evento ${nomeEvento}: A quantidade de eventos favoráveis não pode ser negativa.`
-    );
-  }
-
-  if (qntEventos > espacoAmostral) {
-    throw new Error(
-      `Erro no evento ${nomeEvento}: Os eventos não podem exceder o espaço amostral.`
-    );
-  }
-
   return qntEventos / espacoAmostral;
 }
 
 // Função para calcular o complemento da soma das probabilidades
 function calcularComplementar(probabilidade) {
   return 1 - probabilidade;
+}
+
+// Função para calcular a probabilidade condicional P(A|B)
+function calcularProbabilidadeCondicional(interseccaoAB, eventoB) {
+  if (eventoB <= 0) {
+    alert("O valor de B deve ser maior que zero.");
+    return 0;
+  }
+  return interseccaoAB / eventoB;
 }
 
 // Função para validar o espaço amostral e a quantidade de eventos favoráveis
