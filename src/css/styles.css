@@ -142,30 +142,3 @@ button {
   font-size: 16px;
   margin-bottom: 10px;
 }
-
-@media (max-width: 600px) {
-  .container {
-    padding: 15px;
-  }
-
-  .add-evento,
-  .calcular {
-    padding: 10px 15px;
-    font-size: 14px;
-  }
-
-  .remover-evento {
-    font-size: 12px;
-    padding: 6px 12px;
-  }
-
-  input[type="number"],
-  input[type="text"] {
-    font-size: 14px;
-    padding: 8px;
-  }
-
-  .resultado p {
-    font-size: 14px;
-  }
-}
