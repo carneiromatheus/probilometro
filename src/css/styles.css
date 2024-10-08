@@ -142,3 +142,42 @@ button {
   font-size: 16px;
   margin-bottom: 10px;
 }
+
+button:focus,
+input:focus {
+  outline: 2px solid #007bff;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  input[type="number"],
+  input[type="text"] {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  button {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .remover-evento {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .resultado p {
+    font-size: 14px;
+  }
+}
